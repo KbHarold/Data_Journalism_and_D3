@@ -1,4 +1,5 @@
 // @TODO: YOUR CODE HERE!
+// function makeResponsive() {
 var svgWidth = 600;
 var svgHeight = 400;
 
@@ -107,4 +108,6 @@ var chartGroup = svg.append("g")
       .attr("class", "aText")
       .text("In Poverty (%)");
 });
-  
+// }
+// makeResponsive();
+// d3.select(window).on("resize", makeResponsive);  
