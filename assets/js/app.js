@@ -1,7 +1,7 @@
 // @TODO: YOUR CODE HERE!
 // function makeResponsive() {
-var svgWidth = 600;
-var svgHeight = 400;
+var svgWidth = 800;
+var svgHeight = 600;
 
 var chartMargin = {
     top: 70,
