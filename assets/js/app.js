@@ -1,5 +1,3 @@
-// @TODO: YOUR CODE HERE!
-// function makeResponsive() {
 var svgWidth = 800;
 var svgHeight = 600;
 
@@ -22,21 +20,12 @@ var chartGroup = svg.append("g")
 .attr("transform", `translate(${chartMargin.left}, ${chartMargin.top})`);
 
   d3.csv("assets/data/data.csv").then(function(data) {
-    // change string (from CSV) into number format
     console.log(data);
     data.forEach(function(d) {
       d.poverty = +d.poverty;
       d.abbr = d.abbr;
-    //   d.age = +d.age;
-    //   d.income = +d.income;
-    //   d.obesity = +d.obesity;
-    //   d.smokes = +d.smokes;
       d.healthcareLow = +d.healthcareLow;
       console.log(d.poverty);
-    //   console.log(d.age);
-    //   console.log(d.income);
-    //   console.log(d.obesity);
-    //   console.log(d.smokes);
       console.log(d.healthcareLow);
       console.log(d.abbr);
     });
@@ -44,8 +33,7 @@ var chartGroup = svg.append("g")
     var xLinearScale = d3.scaleLinear()
     .domain([d3.min(data, d => d.poverty)-1.5, d3.max(data, d => d.poverty)])
     .range([0, chartWidth]);
-    //.padding(0.1);
-
+  
     var yLinearScale = d3.scaleLinear()
     .domain([d3.min(data, d => d.healthcareLow)-1, d3.max(data, d => d.healthcareLow)])
     .range([chartHeight, 0]);
@@ -75,7 +63,7 @@ var chartGroup = svg.append("g")
     .enter()
     .append("tspan")
     .attr("x", d => xLinearScale(d.poverty))
-    .attr("y", d => yLinearScale(d.healthcareLow-.2))
+    .attr("y", d => yLinearScale(d.healthcareLow-.1))
     .text(function(d) {return d.abbr})
     .classed("stateText", true);
 
@@ -108,6 +96,3 @@ var chartGroup = svg.append("g")
       .attr("class", "aText")
       .text("In Poverty (%)");
 });
-// }
-// makeResponsive();
-// d3.select(window).on("resize", makeResponsive);  
